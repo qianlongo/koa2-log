@@ -19,10 +19,14 @@
   },
   "homepage": "https://github.com/qianlongo/koa2-log#readme",
   "devDependencies": {
+    "koa": "^2.4.1",
     "precommit-hook": "^3.0.0",
     "standard": "^10.0.3"
   },
   "pre-commit": [
     "lint"
-  ]
+  ],
+  "dependencies": {
+    "log4js": "^2.4.1"
+  }
 }
