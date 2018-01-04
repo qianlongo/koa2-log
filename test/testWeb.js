@@ -3,9 +3,16 @@ const app = new Koa()
 const log = require('../index')
 const PORT = 3000
 
-app.use(log())
+app.use(log('../logs/access.log'))
 app.use(async (ctx, next) => {
-  ctx.body = 'hello world'
+  ctx.body = {
+    code: 200,
+    message: 'ok',
+    data: {
+      name: 'qianlongo',
+      sex: 'boy'
+    }
+  }
 })
 
 app.listen(PORT, () => {
