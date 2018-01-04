@@ -1,18 +1,12 @@
-const { webLogger } = require('./lib/index')
+const logger = require('./lib/logger')
 
-module.exports = (options) => {
+module.exports = (filename) => {
+  const loggerMid = logger(filename)
+
   return async (ctx, next) => {
-    // test
-    await next()
-
-    let { path, query, body } = ctx
-
-    webLogger.warn(JSON.stringify(
-      {
-        path,
-        query,
-        res: body
-      }
-    ))
+    loggerMid(ctx, next)
+      .catch((e) => {
+        ctx.log.error(e.stack)
+      })
   }
 }

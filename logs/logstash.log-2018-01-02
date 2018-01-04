@@ -1,3 +1,0 @@
-[2018-01-02T00:54:05.100] [WARN] web - {"path":"/","query":{},"res":"hello world"}
-[2018-01-02T00:54:41.156] [WARN] web - {"path":"/","query":{"name":"qianlongno"},"res":"hello world"}
-[2018-01-02T00:54:41.590] [WARN] web - {"path":"/","query":{"name":"qianlongno"},"res":"hello world"}
