@@ -1,0 +1,118 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   '--registry=http://r.npm.sankuai.com',
+1 verbose cli   '--cache=/Users/qianlong/.cache/mnpm',
+1 verbose cli   '--disturl=http://npm.sankuai.com/dist/node',
+1 verbose cli   '--userconfig=/Users/qianlong/.mnpmrc',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.8
+3 info using node@v8.9.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/qianlong/codes/works/koa2-log',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/qianlong/.cache/mnpm/koa2-log/1.0.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/qianlong/.cache/mnpm correctMkdir not in flight; initializing
+10 info lifecycle koa2-log@1.0.0~prepublish: koa2-log@1.0.0
+11 silly lifecycle koa2-log@1.0.0~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/qianlong/.cache/mnpm/koa2-log/1.0.0/package.tgz',
+12 verbose tar pack   '/Users/qianlong/codes/works/koa2-log' ]
+13 verbose tarball /Users/qianlong/.cache/mnpm/koa2-log/1.0.0/package.tgz
+14 verbose folder /Users/qianlong/codes/works/koa2-log
+15 verbose addLocalTarball adding from inside cache /Users/qianlong/.cache/mnpm/koa2-log/1.0.0/package.tgz
+16 verbose correctMkdir /Users/qianlong/.cache/mnpm correctMkdir not in flight; initializing
+17 silly cache afterAdd koa2-log@1.0.0
+18 verbose afterAdd /Users/qianlong/.cache/mnpm/koa2-log/1.0.0/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/qianlong/.cache/mnpm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/qianlong/.cache/mnpm/koa2-log/1.0.0/package/package.json written
+21 silly publish { name: 'koa2-log',
+21 silly publish   version: '1.0.0',
+21 silly publish   description: '> koa2 node日志中间件',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts:
+21 silly publish    { test: 'NODE_ENV=\'dev\' nodemon ./test/app.js',
+21 silly publish      lint: 'standard',
+21 silly publish      'lint-fix': 'standard --fix' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'http://wangmin23@git.sankuai.com/scm/~wangmin23/koa2-log.git' },
+21 silly publish   keywords: [],
+21 silly publish   author: { name: 'wangmin23' },
+21 silly publish   license: 'ISC',
+21 silly publish   devDependencies:
+21 silly publish    { koa: '^2.4.1',
+21 silly publish      'koa-compose': '^4.0.0',
+21 silly publish      'koa-router': '^7.3.0',
+21 silly publish      nodemon: '^1.14.8',
+21 silly publish      'precommit-hook': '^3.0.0',
+21 silly publish      standard: '^10.0.3' },
+21 silly publish   'pre-commit': [ 'lint' ],
+21 silly publish   dependencies: { log4js: '^2.4.1' },
+21 silly publish   readme: '## koa2-log\n\n> koa2 node日志中间件\n\n## 说明\n\n### 日志分类\n\n> 目前koa2-log为日志分了两个类\n\n1. web (主要针对用户的访问请求，中间件中自动打的就是该类型)\n2. app (业务方在自己的代码中主动打的日志)\n\n### 日志目录\n\n> 日志存放的地点, 默认存放在当前目录的logs下面,用户可以传入。\n\n\n## 用法\n\n``` javascript\n\n// 1. 添加中间件\n\nconst Koa = require(\'koa\')\nconst app = new Koa()\nconst env = process.env[\'NODE_ENV\']\nconst { name } = require(\'./package.json\') // package.json具体路径根据自己目录结构指定\nconst devEnv = [\'dev\', \'localhost\', \'development\']\nconst logFileName = devEnv.indexOf(env) > -1 ? \'./logs/access.log\' : `/opt/logs/${name}/access.log`\n\napp.use(log(logFileName))\napp.listen(PORT, () => {\n  console.log(`app start at: ${PORT}`)\n})\n\n// 在应用程序中打点\n\nlet count = 0\n\nmodule.exports = {\n  async index (ctx, next) {\n    ctx.log.info(\'我是index的controller\')\n    ctx.body = `index ${count++}`\n  },\n  async list (ctx, next) {\n    ctx.body = `list ${count++}`\n  }\n}\n\n\n```\n\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '9f48cdbf5069c5cd5cb02bc82f1ead8e919783ff',
+21 silly publish   _id: 'koa2-log@1.0.0',
+21 silly publish   _shasum: '3ce3ea27f5e18f05090ea0bce5a397d70abe4e2b',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name koa2-log
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry http://r.npm.sankuai.com/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'koa2-log',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'koa2-log',
+26 silly mapToRegistry   name: 'koa2-log',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri http://r.npm.sankuai.com/koa2-log
+28 verbose publish registryBase http://r.npm.sankuai.com/
+29 silly publish uploading /Users/qianlong/.cache/mnpm/koa2-log/1.0.0/package.tgz
+30 verbose request uri http://r.npm.sankuai.com/koa2-log
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 19:26:03
+33 verbose request id bdd0a5af510690e9
+34 http request PUT http://r.npm.sankuai.com/koa2-log
+35 http 403 http://r.npm.sankuai.com/koa2-log
+36 verbose headers { server: 'Tengine',
+36 verbose headers   date: 'Mon, 08 Jan 2018 11:26:03 GMT',
+36 verbose headers   'content-type': 'application/json; charset=utf-8',
+36 verbose headers   'content-length': '295',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'x-current-requests': '1',
+36 verbose headers   vary: 'Origin',
+36 verbose headers   'x-readtime': '7' }
+37 verbose request invalidating /Users/qianlong/.cache/mnpm/r.npm.sankuai.com/koa2-log on PUT
+38 error publish Failed PUT 403
+39 verbose stack Error: no_perms only allow publish with @dp, @gfe, @mtfe, @poiop, @crm, @mop, @gis, @mtmq, @upm, @sso, @hfe, @myfe, @waimai, @fdfe, @rn, @scfe, @ia, @mx, @board, @analytics, @banmafe, @xgfe, @mfe, @mit, @mosfe, @bfe, @qcsfe, @cs, @zhenguo, @xm, @osx, @lsfe, @dxweb, @dfe scope(s): koa2-log
+39 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+39 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+39 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+39 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+39 verbose stack     at emitTwo (events.js:126:13)
+39 verbose stack     at Request.emit (events.js:214:7)
+39 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+39 verbose stack     at emitOne (events.js:116:13)
+39 verbose stack     at Request.emit (events.js:211:7)
+39 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:965:12)
+40 verbose statusCode 403
+41 verbose pkgid koa2-log
+42 verbose cwd /Users/qianlong/codes/works/koa2-log
+43 error Darwin 15.0.0
+44 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "--registry=http://r.npm.sankuai.com" "--cache=/Users/qianlong/.cache/mnpm" "--disturl=http://npm.sankuai.com/dist/node" "--userconfig=/Users/qianlong/.mnpmrc" "publish"
+45 error node v8.9.1
+46 error npm  v3.10.8
+47 error code E403
+48 error no_perms only allow publish with @dp, @gfe, @mtfe, @poiop, @crm, @mop, @gis, @mtmq, @upm, @sso, @hfe, @myfe, @waimai, @fdfe, @rn, @scfe, @ia, @mx, @board, @analytics, @banmafe, @xgfe, @mfe, @mit, @mosfe, @bfe, @qcsfe, @cs, @zhenguo, @xm, @osx, @lsfe, @dxweb, @dfe scope(s): koa2-log
+49 error If you need help, you may report this error at:
+49 error     <https://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]
