@@ -1,5 +1,5 @@
 {
-  "name": "koa2-log",
+  "name": "@qianlongo/koa2-log",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,11 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://wangmin23@git.sankuai.com/scm/~wangmin23/koa2-log.git"
+    "url": "git+https://github.com/qianlongo/koa2-log.git"
   },
   "keywords": [],
-  "author": "wangmin23",
+  "author": "qianlongo",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qianlongo/koa2-log/issues"
+  },
+  "homepage": "https://github.com/qianlongo/koa2-log#readme",
   "devDependencies": {
     "koa": "^2.4.1",
     "koa-compose": "^4.0.0",
