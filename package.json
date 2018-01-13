@@ -1,5 +1,5 @@
 {
-  "name": "@qianlongoo/koa2-log",
+  "name": "koa2-log",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
